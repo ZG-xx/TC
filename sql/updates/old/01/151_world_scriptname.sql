@@ -1,0 +1,1 @@
+UPDATE `creature_template` SET `ScriptName`='' WHERE `entry` IN ('17116','17240','17440');

@@ -1,0 +1,1 @@
+UPDATE `creature_template` SET `speed_walk`='2',`spell1`='57403',`VehicleId`='200',`RegenHealth`='0',`ScriptName`='vehicle_knight_gryphon' WHERE (`entry`='33519');
