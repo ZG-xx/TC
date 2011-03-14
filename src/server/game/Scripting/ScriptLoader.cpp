@@ -47,6 +47,9 @@ void AddSC_example_spell_scripts();
 
 void AddSC_SmartSCripts();
 
+//Custom
+void AddSC_Npc_Buff();
+
 //Commands
 void AddSC_account_commandscript();
 void AddSC_achievement_commandscript();
@@ -1235,5 +1238,7 @@ void AddCustomScripts()
     AddSC_guildmaster();
     //TeleNPC2
     AddSC_npc_teleport();
+ 	// Buff NPC
+ 	AddSC_Npc_Buff();
 #endif
 }
