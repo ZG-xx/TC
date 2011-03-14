@@ -285,7 +285,6 @@ public:
             if (me->HasAura(SPELL_TWILIGHT_REVENGE))
                 me->RemoveAurasDueToSpell(SPELL_TWILIGHT_REVENGE);
 
-            me->ResetLootMode();
             me->SetHomePosition(3246.57f, 551.263f, 58.6164f, 4.66003f);
 
             achievProgress = 0;
@@ -659,7 +658,7 @@ public:
             // Lavas Strike
             if (m_uiLavaStrikeTimer <= uiDiff)
             {
-                if (Unit* pTarget = SelectUnit(SELECT_TARGET_RANDOM, 0))
+                if (Unit* pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0))
                 {
                     CastLavaStrikeOnTarget(pTarget);
 
@@ -1053,7 +1052,7 @@ public:
             // shadow fissure
             if (m_uiShadowFissureTimer <= uiDiff)
             {
-                if (Unit* pTarget = SelectUnit(SELECT_TARGET_RANDOM, 0))
+                if (Unit* pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0))
                     DoCast(pTarget, RAID_MODE(SPELL_SHADOW_FISSURE, SPELL_SHADOW_FISSURE));
 
                 m_uiShadowFissureTimer = urand(15000,20000);
@@ -1150,7 +1149,7 @@ public:
             // shadow fissure
             if (m_uiShadowFissureTimer <= uiDiff)
             {
-                if (Unit* pTarget = SelectUnit(SELECT_TARGET_RANDOM, 0))
+                if (Unit* pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0))
                     DoCast(pTarget, RAID_MODE(SPELL_SHADOW_FISSURE, SPELL_SHADOW_FISSURE_H));
 
                 m_uiShadowFissureTimer = urand(15000,20000);
@@ -1250,7 +1249,7 @@ public:
             // shadow fissure
             if (m_uiShadowFissureTimer <= uiDiff)
             {
-                if (Unit* pTarget = SelectUnit(SELECT_TARGET_RANDOM, 0))
+                if (Unit* pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0))
                     DoCast(pTarget, RAID_MODE(SPELL_SHADOW_FISSURE, SPELL_SHADOW_FISSURE_H));
 
                 m_uiShadowFissureTimer = urand(15000,20000);

@@ -286,7 +286,7 @@ class boss_akilzon : public CreatureScript
 
                 if (StaticDisruption_Timer <= diff)
                 {
-                    Unit *pTarget = SelectUnit(SELECT_TARGET_RANDOM, 1);
+                    Unit *pTarget = SelectTarget(SELECT_TARGET_RANDOM, 1);
                     if (!pTarget) pTarget = me->getVictim();
                     TargetGUID = pTarget->GetGUID();
                     DoCast(pTarget, SPELL_STATIC_DISRUPTION, false);
@@ -299,7 +299,7 @@ class boss_akilzon : public CreatureScript
 
                 if (GustOfWind_Timer <= diff)
                 {
-                    Unit *pTarget = SelectUnit(SELECT_TARGET_RANDOM, 1);
+                    Unit *pTarget = SelectTarget(SELECT_TARGET_RANDOM, 1);
                     if (!pTarget) pTarget = me->getVictim();
                     DoCast(pTarget, SPELL_GUST_OF_WIND);
                     GustOfWind_Timer = (20+rand()%10)*1000; //20 to 30 seconds(bosskillers)
@@ -363,7 +363,7 @@ class boss_akilzon : public CreatureScript
                         Unit* bird = Unit::GetUnit(*me,BirdGUIDs[i]);
                         if (!bird) //they despawned on die
                         {
-                            if (Unit *pTarget = SelectUnit(SELECT_TARGET_RANDOM, 0))
+                            if (Unit *pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0))
                             {
                                 x = pTarget->GetPositionX() + irand(-10,10);
                                 y = pTarget->GetPositionY() + irand(-10,10);
@@ -444,7 +444,7 @@ class mob_akilzon_eagle : public CreatureScript
 
                 if (arrived)
                 {
-                    if (Unit *pTarget = SelectUnit(SELECT_TARGET_RANDOM, 0))
+                    if (Unit *pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0))
                     {
                         float x, y, z;
                         if (EagleSwoop_Timer)

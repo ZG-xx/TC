@@ -35,6 +35,7 @@ class MapManager
 {
     friend class ACE_Singleton<MapManager, ACE_Thread_Mutex>;
     typedef UNORDERED_MAP<uint32, Map*> MapMapType;
+    typedef std::vector<bool> InstanceIds;
 
     public:
 
@@ -133,13 +134,20 @@ class MapManager
         TransportMap m_TransportsByMap;
 
         bool CanPlayerEnter(uint32 mapid, Player* player, bool loginCheck = false);
-        uint32 GenerateInstanceId() { return ++i_MaxInstanceId; }
-        void InitMaxInstanceId();
         void InitializeVisibilityDistanceInfo();
 
         /* statistics */
         uint32 GetNumInstances();
         uint32 GetNumPlayersInInstances();
+
+        // Instance ID management
+        void InitInstanceIds();
+        uint32 GenerateInstanceId();
+        void RegisterInstanceId(uint32 instanceId);
+        void FreeInstanceId(uint32 instanceId);
+
+        uint32 GetNextInstanceId() { return _nextInstanceId; };
+        void SetNextInstanceId(uint32 nextInstanceId) { _nextInstanceId = nextInstanceId; };
 
     private:
         // debugging code, should be deleted some day
@@ -165,7 +173,8 @@ class MapManager
         MapMapType i_maps;
         IntervalTimer i_timer;
 
-        uint32 i_MaxInstanceId;
+        InstanceIds _instanceIds;
+        uint32 _nextInstanceId;
         MapUpdater m_updater;
 };
 #define sMapMgr ACE_Singleton<MapManager, ACE_Thread_Mutex>::instance()

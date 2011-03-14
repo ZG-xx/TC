@@ -4200,6 +4200,10 @@ void SpellMgr::LoadSpellCustomAttr()
             spellInfo->AuraInterruptFlags |= AURA_INTERRUPT_FLAG_SPELL_ATTACK;
             count++;
             break;
+        case 51590: // Toss Ice Boulder
+            spellInfo->MaxAffectedTargets = 1;
+            count++;
+            break;
         default:
             break;
         }
