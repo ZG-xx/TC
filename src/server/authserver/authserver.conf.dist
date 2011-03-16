@@ -1,5 +1,5 @@
 ###############################################
-# Triora Core Auth Server configuration file  #
+# trinity Core Auth Server configuration file  #
 ###############################################
 [authserver]
 
@@ -233,9 +233,9 @@ WrongPass.BanType = 0
 #                                                                 section my.ini)
 #                     ".;/path/to/unix_socket;username;password;database" - (use Unix sockets on
 #                                                                           Unix/Linux)
-#        Default:     "127.0.0.1;3306;triora;triora;auth"
+#        Default:     "127.0.0.1;3306;trinity;trinity;auth"
 
-LoginDatabaseInfo = "127.0.0.1;3306;triora;triora;auth"
+LoginDatabaseInfo = "127.0.0.1;3306;trinity;trinity;auth"
 
 #
 #    LoginDatabase.WorkerThreads

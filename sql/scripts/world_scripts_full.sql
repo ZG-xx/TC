@@ -1812,7 +1812,7 @@ INSERT INTO `achievement_criteria_data` (`criteria_id`,`type`,`value1`,`value2`,
 (12989,11,0,0, 'achievement_all_you_can_eat');
 
 /* SPELLS */
-INSERT INTO `spell_script_names` (`spell_id`,`ScriptName`) VALUES
+REPLACE INTO `spell_script_names` (`spell_id`,`ScriptName`) VALUES
 -- generic
 ( 39228, 'spell_gen_absorb0_hitlimit1'),
 ( 60218, 'spell_gen_absorb0_hitlimit1'),

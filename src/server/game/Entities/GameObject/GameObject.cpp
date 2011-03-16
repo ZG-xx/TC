@@ -461,7 +461,7 @@ void GameObject::Update(uint32 diff)
                             if (sScriptMgr->OnGossipHello(ok->ToPlayer(), this))
                                 return;
 
-                        m_cooldownTime = time(NULL) + 4;        // 4 seconds
+                        m_cooldownTime = time(NULL) + goInfo->trap.cooldown ? goInfo->trap.cooldown :  uint32(4);   // template or 4 seconds
 
                         if (owner || (goInfo->trap.spellId == 34709))
                             SetLootState(GO_JUST_DEACTIVATED);
@@ -1058,7 +1058,16 @@ void GameObject::Use(Unit* user)
         AI()->GossipHello(playerUser);
     }
 
-    switch(GetGoType())
+    // If cooldown data present in template
+    if (uint32 cooldown = GetGOInfo()->GetCooldown())
+    {
+        if (m_cooldownTime > sWorld->GetGameTime())
+            return;
+
+        m_cooldownTime = sWorld->GetGameTime() + cooldown;
+    }
+
+    switch (GetGoType())
     {
         case GAMEOBJECT_TYPE_DOOR:                          //0
         case GAMEOBJECT_TYPE_BUTTON:                        //1

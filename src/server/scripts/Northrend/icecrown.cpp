@@ -2322,6 +2322,4 @@ void AddSC_icecrown()
     new npc_maloric;
     new npc_Scarlet_Onslaught;
     new npc_webbed_crusader;
-	new npc_squire_danny;
-	new npc_argent_champion;
 }

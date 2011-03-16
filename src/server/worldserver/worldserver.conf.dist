@@ -1,5 +1,5 @@
 ################################################
-# Triora Core World Server configuration file #
+# trinity Core World Server configuration file #
 ################################################
 [worldserver]
 
@@ -56,7 +56,7 @@ RealmID = 1
 #    DataDir
 #        Description: Data directory setting.
 #        Important:   DataDir needs to be quoted, as the string might contain space characters.
-#        Example:     "@prefix@/share/trioracore"
+#        Example:     "@prefix@/share/trinitycore"
 #        Default:     "."
 
 DataDir = "."
@@ -81,13 +81,13 @@ LogsDir = ""
 #                                                                 section my.ini)
 #                     ".;/path/to/unix_socket;username;password;database" - (use Unix sockets on
 #                                                                           Unix/Linux)
-#        Default:     "127.0.0.1;3306;triora;triora;auth"       - (LoginDatabaseInfo)
-#                     "127.0.0.1;3306;triora;triora;world"      - (WorldDatabaseInfo)
-#                     "127.0.0.1;3306;triora;triora;characters" - (CharacterDatabaseInfo)
+#        Default:     "127.0.0.1;3306;trinity;trinity;auth"       - (LoginDatabaseInfo)
+#                     "127.0.0.1;3306;trinity;trinity;world"      - (WorldDatabaseInfo)
+#                     "127.0.0.1;3306;trinity;trinity;characters" - (CharacterDatabaseInfo)
 
-LoginDatabaseInfo     = "127.0.0.1;3306;triora;triora;auth"
-WorldDatabaseInfo     = "127.0.0.1;3306;triora;triora;world"
-CharacterDatabaseInfo = "127.0.0.1;3306;triora;triora;characters"
+LoginDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;auth"
+WorldDatabaseInfo     = "127.0.0.1;3306;trinity;trinity;world"
+CharacterDatabaseInfo = "127.0.0.1;3306;trinity;trinity;characters"
 
 #
 #    LoginDatabase.WorkerThreads
@@ -1351,10 +1351,10 @@ BeepAtStart = 1
 #    Motd
 #        Description: Message of the Day, displayed at login.
 #                     Use '@' for a newline and be sure to escape special characters.
-#        Example:     "Welcome to John\'s Server@This server runs on Triora Core."
-#        Default:     "Welcome to a Triora Core server."
+#        Example:     "Welcome to John\'s Server@This server runs on trinity Core."
+#        Default:     "Welcome to a trinity Core server."
 
-Motd = "Welcome to a Triora Core server."
+Motd = "Welcome to a trinity Core server."
 
 #
 #    Server.LoginInfo
